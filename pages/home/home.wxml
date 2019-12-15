@@ -1,0 +1,3 @@
+<!--pages/home/home.wxml-->
+<my-swiper banner="{{banner}}"></my-swiper>
+
