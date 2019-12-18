@@ -1,0 +1,6 @@
+<!--pages/home/childrenCpts/my-goods/my-goods.wxml-->
+<view class="goods-container">
+  <block wx:for="{{goodsList}}" wx:key="index">
+    <my-goods-item class="goods-item" goodsItem="{{item}}" ></my-goods-item>
+  </block>
+</view>

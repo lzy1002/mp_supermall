@@ -1,6 +1,6 @@
 <!--components/my-swiper/my-swiper.wxml-->
 <swiper class="swiper" style="height: {{maxHeight}}px" circular indicator-dots autoplay interval="3000" indicator-active-color="#ff5777">
-  <block wx:for="{{banner}}" wx:key="{{index}}">
+  <block wx:for="{{banner}}" wx:key="index">
     <swiper-item class="swiper-item" >
       <image src="{{item.image}}" class="image" style="width: 100%;height: 100%;" bind:load="imageLoad"></image>
     </swiper-item>

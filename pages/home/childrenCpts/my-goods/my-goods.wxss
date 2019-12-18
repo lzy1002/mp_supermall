@@ -1,0 +1,13 @@
+/* pages/home/childrenCpts/my-goods/my-goods.wxss */
+.goods-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.goods-item {
+  position: relative;
+  width: 48%;
+  height: 340px;
+  margin-top: 30rpx;
+}

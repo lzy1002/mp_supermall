@@ -1,0 +1,23 @@
+/* pages/home/childrenCpts/my-recommend/my-recommend.wxss */
+.recommend-container {
+  display: flex;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 16rpx solid #eee;
+}
+
+.recommend-container .recommend-item {
+  flex: 1;
+  text-align: center;
+}
+
+.recommend-container .recommend-item image {
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.recommend-container .recommend-item view {
+  font-size: 28rpx;
+  color: #555;
+  margin-top: 10rpx;
+}

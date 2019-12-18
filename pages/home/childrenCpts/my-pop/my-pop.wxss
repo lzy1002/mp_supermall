@@ -1,0 +1,4 @@
+/* pages/home/childrenCpts/my-pop/my-pop.wxss */
+image {
+  width: 100%;
+}

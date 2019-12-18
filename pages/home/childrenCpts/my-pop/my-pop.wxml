@@ -1,0 +1,4 @@
+<!--pages/home/childrenCpts/my-pop/my-pop.wxml-->
+<view>
+  <image src="../../../../assets/home/popular_bg.jpg" mode="widthFix"></image>
+</view>

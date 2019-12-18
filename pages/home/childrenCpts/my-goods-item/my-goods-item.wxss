@@ -1,0 +1,50 @@
+/* pages/home/childrenCpts/my-goods-item/my-goods-item.wxss */
+.goods-item {
+  width: 45%;
+  /* flex: 45%; */
+}
+.image {
+  border-radius: 3px;
+}
+
+.desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.desc .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desc .price {
+  color: #ff5777;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.desc .cfav {
+  vertical-align: middle;
+}
+
+.desc .cfav-img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* 注意：在wxss文件中 不可以引用本地图片 可以使用网络图片 */
+/* .desc .cfav::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("/assets/common/favor.png");
+  background-position: 0 0 ;
+  background-size: 15px 15px;
+} */

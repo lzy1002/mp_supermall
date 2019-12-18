@@ -1,0 +1,9 @@
+<!--pages/home/childrenCpts/my-recommend/my-recommend.wxml-->
+<view class="recommend-container">
+  <block wx:for="{{recommendList}}" wx:key="index">
+    <view class="recommend-item">
+      <image src="{{item.image}}"></image>
+      <view>{{item.title}}</view>
+    </view>
+  </block>
+</view>

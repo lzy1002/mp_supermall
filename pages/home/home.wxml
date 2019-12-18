@@ -1,3 +1,13 @@
 <!--pages/home/home.wxml-->
-<my-swiper banner="{{banner}}"></my-swiper>
+<my-swiper banner="{{banner}}" bind:imageLoad="imageLoad"></my-swiper>
 
+<my-recommend recommendList="{{recommend}}"></my-recommend>
+
+<my-pop></my-pop>
+
+<my-tab-control class="{{isFixed ? 'fixed' : ''}}" id="tabControl" tabList="{{tabList}}" bind:changeTab="changeTab"></my-tab-control>
+<my-tab-control wx:if="{{isFixed}}" tabList="{{tabList}}" bind:changeTab="changeTab"></my-tab-control>
+
+<my-goods goodsList="{{goods[activePath].list}}"></my-goods>
+
+<my-back-top wx:if="{{backTopIsShow}}" bind:tap="scrollTop"></my-back-top>
