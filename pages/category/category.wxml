@@ -1,2 +1,18 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="category-box">
+  <scroll-view class="cate-title" scroll-y>
+    <block wx:for="{{categoryTitleList}}" wx:key="index">
+      <view class="cate-title-item {{index === activeIndex ? 'active' : ''}}" data-index="{{index}}" data-maitKey="{{item.maitKey}}" data-miniWallkey="{{item.miniWallkey}}" bind:tap="titleItemTap">{{item.title}}</view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y class="cate-content">
+    <block wx:for="{{categoryList}}" wx:key="index">
+      <view class="category-item">
+        <view class="image-box">
+          <image src="{{item.image}}" mode="widthFix"></image>
+        </view>
+        <view class="title">{{item.title}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

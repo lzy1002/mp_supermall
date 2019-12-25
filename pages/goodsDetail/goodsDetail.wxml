@@ -1,0 +1,149 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<swiper class="swiper-box" indicator-dots indicator-active-color="#ff5777">
+  <block wx:for="{{goodsData.topImages}}" wx:key="*this">
+    <swiper-item class="swiper-item">
+      <image src="{{item}}" mode="widthFix"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="goods-info">
+  <view class="title">{{goodsData.title}}</view>
+  <view class="price-box">
+    <text class="now-price">{{goodsData.price}}</text>
+    <text class="old-price">{{goodsData.oldPrice}}</text>
+    <text class="tag">{{goodsData.discountDesc}}</text>
+  </view>
+  <view class="coll">
+    <block wx:for="{{goodsData.columns}}" wx:key="*this">
+      <text>{{item}}</text>
+    </block>
+  </view>
+  <view class="services">
+    <block wx:for="{{goodsData.services}}">
+      <block wx:if="{{index !== 0}}">
+        <view class="services-item">
+          <image src="{{item.icon}}" mode="widthFix"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+
+<view class="shop-box">
+  <view class="name">
+    <view class="image-box">
+      <image src="{{shopData.shopLogo}}" mode="widthFix"></image>
+    </view>
+    <text>{{shopData.name}}</text>
+  </view>
+  <view class="info">
+    <view class="info-left">
+      <view class="info-left-item">
+        <view class="total-count">52157</view>
+        <view class="text">总销量</view>
+      </view>
+      <view class="info-left-item">
+        <view class="all-product">202</view>
+        <view class="text">全部宝贝</view>
+      </view>
+    </view>
+    <view class="info-right">
+      <block wx:for="{{shopData.score}}" wx:key="index">
+        <view class="info-r-row">
+          <view class="title">{{item.name}}</view>
+          <view class="score" space="emsp" class="{{item.score >= 5 ? 'more' : 'less'}}">{{item.score}}</view>
+          <view class="{{item.score >= 5 ? 'more' : 'less'}}">{{item.score >= 5 ? '高' : '低'}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="go-shop-box">
+    <view class="go-shop">进店逛逛</view>
+  </view>
+</view>
+
+<view class="text-desc">{{goodsDetailData.desc}}</view>
+
+<view class="image-desc">
+  <block wx:for="{{goodsDetailData.detailImage}}" wx:key="*this">
+    <image src="{{item}}" mode="widthFix"></image>
+  </block>
+</view>
+
+<view class="goods-params">
+  <view class="size-box">
+    <block wx:for="{{goodsDetailData.rule}}" wx:for-item="item1" wx:for-index="index1" wx:key="index">
+      <view class="row">
+        <block wx:for="{{item1}}" wx:for-item="item2" wx:for-index="index2" wx:key="index">
+          <view>{{item2}}</view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="params-box">
+    <block wx:for="{{goodsDetailData.info}}" wx:key="index">
+      <view class="row">
+        <view class="title">{{item.key}}</view>
+        <view class="text">{{item.value}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="rate-box">
+  <view class="title">
+    <text>用户评价</text>
+    <text>更多>></text>
+  </view>
+  <view class="content">
+    <view class="user">
+      <view class="avatar-box">
+        <image class="avatar" src="{{rateData.user.avatar}}" mode="widthFix"></image>
+      </view>
+      <text class="nickname">{{rateData.user.uname}}</text>
+    </view>
+    <view class="rate-text">{{rateData.content}}</view>
+    <view class="params">
+      <text>{{rateData.created}}</text>
+      <text>{{rateData.style}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="recommend-box">
+  <view class="title">商品推荐</view>
+  <view class="content">
+    <block wx:for="{{recommendData}}" wx:key="index">
+      <my-goods-item class="goods-item" goodsItem="{{item}}"></my-goods-item>
+    </block>
+  </view>
+</view>
+
+<view class="bottom-bar">
+  <view class="left">
+    <view class="left-item">
+      <view class="icon-box">
+        <image src="/assets/detail/service.png"></image>
+      </view>
+      <view class="title">客服</view>
+    </view>
+    <view class="left-item">
+      <view class="icon-box">
+        <image src="/assets/detail/shop.png"></image>
+      </view>
+      <view class="title">店铺</view>
+    </view>
+    <view class="left-item">
+      <view class="icon-box">
+        <image src="/assets/detail/collect.png"></image>
+      </view>
+      <view class="title">收藏</view>
+    </view>
+  </view>
+  <view class="right">
+    <view class="right-item" bind:tap="goCart">加入购物车</view>
+    <view class="right-item">购买</view>
+  </view>
+</view>

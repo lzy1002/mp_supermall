@@ -1,1 +1,28 @@
 /* pages/cart/cart.wxss */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 90rpx;
+  background-color: #eee;
+}
+
+.bottom-bar .left {
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-bar .left .checkbox-box {
+  margin-right: 20rpx;
+}
+
+.bottom-bar .right {
+  flex: 1;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  background-color: orangered;
+}

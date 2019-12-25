@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-cart-item": "./childrenCpts/my-cart-item/my-cart-item"
+  }
 }
