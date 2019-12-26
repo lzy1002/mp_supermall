@@ -2,10 +2,10 @@
 <view class="category-box">
   <scroll-view class="cate-title" scroll-y>
     <block wx:for="{{categoryTitleList}}" wx:key="index">
-      <view class="cate-title-item {{index === activeIndex ? 'active' : ''}}" data-index="{{index}}" data-maitKey="{{item.maitKey}}" data-miniWallkey="{{item.miniWallkey}}" bind:tap="titleItemTap">{{item.title}}</view>
+      <view class="cate-title-item {{index === activeIndex ? 'active' : ''}}" data-index="{{index}}" bind:tap="titleItemTap">{{item.title}}</view>
     </block>
   </scroll-view>
-  <scroll-view scroll-y class="cate-content">
+  <scroll-view scroll-y class="cate-content" scroll-top="{{scrollTop}}">
     <block wx:for="{{categoryList}}" wx:key="index">
       <view class="category-item">
         <view class="image-box">
@@ -14,5 +14,10 @@
         <view class="title">{{item.title}}</view>
       </view>
     </block>
+    <view class="categoryGoods-box">
+      <block wx:for="{{categoryGoodsList}}" wx:key="index">
+        <my-goods-item class="goods-item" goodsItem="{{item}}"></my-goods-item>
+      </block>
+    </view>
   </scroll-view>
 </view>

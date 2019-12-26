@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "my-cart-item": "./childrenCpts/my-cart-item/my-cart-item"
-  }
+  },
+  "navigationBarTitleText": "购物车"
 }

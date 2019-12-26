@@ -1,5 +1,5 @@
 // pages/category/category.js
-import {getCategoryTitleData, getCategoryList} from "../../api/category.js";
+import {getCategoryTitleData, getCategoryList, getCategoryGoodsList} from "../../api/category.js";
 
 Page({
 
@@ -9,7 +9,9 @@ Page({
   data: {
     categoryTitleList: [],
     activeIndex: 0,
-    categoryList: []
+    categoryList: [],
+    categoryGoodsList: [],
+    scrollTop: 0
   },
   getCategoryTitleData() {
     getCategoryTitleData().then(res => {
@@ -18,16 +20,20 @@ Page({
         categoryTitleList: res.data.data.category.list
       })
       this.getCategoryList(this.data.categoryTitleList[0].maitKey);
+      this.getCategoryGoodsList(this.data.categoryTitleList[0].miniWallkey, "pop");
     })
   },
   titleItemTap(event) {
     const index = event.currentTarget.dataset.index;
-    const maitKey = event.currentTarget.dataset.maitKey;
-    const miniWallkey = event.currentTarget.dataset.miniWallkey;
-    console.log(event);
+    console.log(this.data.categoryTitleList);
+    const maitKey = this.data.categoryTitleList[index].maitKey;
+    const miniWallkey = this.data.categoryTitleList[index].miniWallkey;
+    console.log(maitKey, miniWallkey);
     this.getCategoryList(maitKey);
+    this.getCategoryGoodsList(miniWallkey, "pop");
     this.setData({
-      activeIndex: index
+      activeIndex: index,
+      scrollTop: 0
     })
   },
   getCategoryList(maitKey) {
@@ -38,13 +44,20 @@ Page({
       })
     })
   },
+  getCategoryGoodsList(miniWallkey, type) {
+    getCategoryGoodsList(miniWallkey, type).then(res => {
+      console.log(res);
+      this.setData({
+        categoryGoodsList: res.data
+      })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getCategoryTitleData();
-
   },
 
   /**

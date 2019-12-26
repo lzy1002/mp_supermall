@@ -1,6 +1,6 @@
 <!--pages/cart/cart.wxml-->
 <view class="cart">
-  <block wx:for="{{cartData}}" wx:key="index">
+  <block wx:if="{{cartData.length > 0}}" wx:for="{{cartData}}" wx:key="index">
     <my-cart-item cartItemData="{{item}}" index="{{index}}" bind:itemChackboxChange="itemChackboxChange"></my-cart-item>
   </block>
 </view>

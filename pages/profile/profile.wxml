@@ -1,2 +1,64 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="login-box">
+  <view class="avatar-box">
+    <image src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/assets/profile/avatar.png'}}" mode="widthFix"></image>
+  </view>
+  <view class="userinfo-box">
+    <view class="user-name">{{userInfo.nickName ? userInfo.nickName : '登录/注册'}}</view>
+    <view class="mobile">
+      <image src="/assets/profile/phone.png" mode="widthFix"></image>
+      <text>暂无绑定手机号</text>
+    </view>
+    <view class="right-arrow"></view>
+  </view>
+  <block wx:if="{{!userInfo.nickName}}">
+    <button class="getuserinfo" open-type="getUserInfo" bind:getuserinfo="getUserInfo"></button>
+  </block>
+</view>
+
+<view class="params">
+  <view class="params-item">
+    <view class="num">
+      <text>0.00</text>元
+    </view>
+    <view class="title">我的余额</view>
+  </view>
+  <view class="params-item">
+    <view class="num">
+      <text>0</text>个
+    </view>
+    <view class="title">我的优惠</view>
+  </view>
+  <view class="params-item">
+    <view class="num">
+      <text>0</text>分
+    </view>
+    <view class="title">我的积分</view>
+  </view>
+</view>
+
+<view class="options-one">
+  <view class="option-item">
+    <image src="/assets/profile/message.png" mode="widthFix"></image>
+    <text>我的消息</text>
+  </view>
+  <view class="option-item">
+    <image src="/assets/profile/pointer.png" mode="widthFix"></image>
+    <text>积分商城</text>
+  </view>
+  <view class="option-item">
+    <image src="/assets/profile/vip.png" mode="widthFix"></image>
+    <text>会员卡</text>
+  </view>
+</view>
+
+<view class="options-two">
+  <view class="option-item">
+    <image src="/assets/profile/cart.png" mode="widthFix"></image>
+    <text>我的购物车</text>
+  </view>
+  <view class="option-item">
+    <image src="/assets/profile/app.png" mode="widthFix"></image>
+    <text>下载购物车App</text>
+  </view>
+</view>

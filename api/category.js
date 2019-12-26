@@ -5,12 +5,22 @@ export function getCategoryTitleData() {
     url: "/category"
   })
 }
-// http://106.54.54.237:8000/api/w1/subcategory?maitKey=3627
+
 export function getCategoryList(maitKey) {
   return request({
     url: "/subcategory",
     data: {
       maitKey
+    }
+  })
+}
+
+export function getCategoryGoodsList(miniWallkey, type) {
+  return request({
+    url: "/subcategory/detail",
+    data: {
+      miniWallkey,
+      type
     }
   })
 }

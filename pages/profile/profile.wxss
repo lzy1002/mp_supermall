@@ -1,1 +1,114 @@
 /* pages/profile/profile.wxss */
+page {
+  color: #555;
+}
+
+.login-box {
+  padding: 40rpx 40rpx;
+  display: flex;
+  color: #fff;
+  background-color: #ff5777;
+  position: relative;
+}
+
+.login-box .getuserinfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.login-box .avatar-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-right: 30rpx;
+}
+
+.login-box .avatar-box image {
+  width: 100%;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.login-box .userinfo-box {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-box .userinfo-box image {
+  width: 32rpx;
+  vertical-align: middle;
+}
+
+.login-box .userinfo-box text {
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+
+.login-box .userinfo-box .right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 24rpx;
+  height: 24rpx;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.params {
+  display: flex;
+  border-bottom: 30rpx solid #eee;
+}
+
+.params .params-item {
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  padding: 30rpx 0;
+  border-right: 1px solid #eee;
+}
+
+.params .params-item:last-child {
+  border: none;
+}
+
+.params .params-item .num {
+  margin-bottom: 10rpx;
+}
+
+.params .params-item .num text {
+  font-size: 36rpx;
+  color: orangered;
+  font-weight: 700;
+}
+
+.options-one {
+  border-bottom: 30rpx solid #eee;
+}
+
+.options-two {
+
+}
+
+.option-item {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+}
+
+.option-item image {
+  width: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+.option-item text {
+  vertical-align: middle;
+}

@@ -46,3 +46,17 @@
 .category-box .cate-content .category-item .image-box image {
   width: 100%;
 }
+
+.category-box .cate-content .categoryGoods-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.category-box .cate-content .categoryGoods-box .goods-item {
+  position: relative;
+  width: 48%;
+  height: 340px;
+  margin-top: 30rpx;
+}
+
